@@ -1,36 +1,33 @@
 package cn.edu.sustech.cs209.chatting.server;
 
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 
-public class Main {
+public class Server {
     private int serverPort;
 
-    public Main(int serverPort) {
+    public Server(int serverPort) {
         this.serverPort = serverPort;
         this.excute();
     }
+
     public void excute() {
         ServerSocket serverSocket = null;
         try {
             serverSocket = new ServerSocket(serverPort);
-            ExecutorService executorService = Executors.newFixedThreadPool(20);
-            resetText("聊天室小程序已启动");
+            ExecutorService executorService= Executors.newFixedThreadPool(20);
+            System.out.println("Sever start:");
             while (true) {
                 Socket socket = serverSocket.accept();
-                resetText("有新的朋友加入");
+                System.out.println(socket.getInetAddress()+"jion");
                 executorService.execute(new SocketHandler(socket));
             }
-        } catch (IOException e) {
+        } catch(IOException e) {
             e.printStackTrace();
         } finally {
             if (serverSocket != null) {
@@ -42,18 +39,10 @@ public class Main {
             }
         }
     }
-    public static void resetText(String info) {
-        String jta = info + "\n";
-    }
 
-    public static void main(String[] args) throws IOException {
-        System.out.println("Starting server");
-        Main server = new Main(1111);
+    public static void main(String[] args){
+        Server server = new Server(8888);
     }
 }
-
-
-
-
 
 
