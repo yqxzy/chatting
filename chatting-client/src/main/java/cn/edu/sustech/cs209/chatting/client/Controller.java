@@ -27,13 +27,12 @@ public class Controller implements Initializable {
     public TextArea inputArea;
   public Label currentUsername;
   public Label currentOnlineCnt;
-    @FXML
-    ListView<Message> chatContentList;
+    @FXML ListView<Message> chatContentList;
 
-    static String username;
+  static String username;
 
-    private TCPClient tcpClient;
-    private List<String> totalUsers=new ArrayList<>();
+  private TCPClient tcpClient;
+  private List<String> totalUsers=new ArrayList<>();
     private Thread readThread;
     private String nowSendTo;
     private boolean isGroup;
