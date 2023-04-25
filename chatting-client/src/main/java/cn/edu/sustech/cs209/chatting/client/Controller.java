@@ -33,11 +33,11 @@ public class Controller implements Initializable {
 
   private TCPClient tcpClient;
   private List<String> totalUsers=new ArrayList<>();
-    private Thread readThread;
-    private String nowSendTo;
-    private boolean isGroup;
-    private Group nowGroup;
-    private String nowGN;
+  private Thread readThread;
+  private String nowSendTo;
+  private boolean isGroup;
+  private Group nowGroup;
+  private String nowGN;
 
     @FXML
     ListView<String> chatList;
