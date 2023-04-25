@@ -29,8 +29,10 @@
             <ListView fx:id="chatContentList" prefHeight="200.0" prefWidth="200.0"/>
             <HBox prefHeight="100.0" prefWidth="200.0">
                 <TextArea fx:id="inputArea" prefHeight="138.0" prefWidth="624.0" HBox.hgrow="ALWAYS"/>
-                <Button maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#doSendMessage"
+                <Button prefHeight="138.0" prefWidth="200" mnemonicParsing="false" onAction="#doSendMessage"
                         text="Send" HBox.hgrow="ALWAYS"/>
+                <Button prefHeight="138.0" prefWidth="200" mnemonicParsing="false" onAction="#doAsk"
+                        text="refresh" HBox.hgrow="ALWAYS"/>
             </HBox>
         </SplitPane>
     </SplitPane>
