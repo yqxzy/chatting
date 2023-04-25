@@ -24,10 +24,9 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class Controller implements Initializable {
-
     public TextArea inputArea;
-    public Label currentUsername;
-    public Label currentOnlineCnt;
+  public Label currentUsername;
+  public Label currentOnlineCnt;
     @FXML
     ListView<Message> chatContentList;
 
